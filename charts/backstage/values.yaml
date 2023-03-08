@@ -65,7 +65,7 @@ ingress:
   annotations: {}
 
   # -- Hostname to be used to expose the route to access the backstage application (e.g: backstage.IP.nip.io)
-  host: ""
+  host: "apps.tmm-hub.demo.red-chesterfield.com"
 
   # -- Ingress TLS parameters
   tls:
@@ -167,7 +167,10 @@ backstage:
   #   app:
   #     baseUrl: https://somedomain.tld
   # -- Generates ConfigMap and configures it in the Backstage pods
-  appConfig: {}
+  appConfig: {
+    app:
+      baseUrl: https://console-openshift-console.apps.tmm-hub.demo.red-chesterfield.com
+  }
 
   # -- Node tolerations for server scheduling to nodes with taints
   # <br /> Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
